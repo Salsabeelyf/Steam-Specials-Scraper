@@ -15,7 +15,8 @@
     * original price
     * discounted price
     * discount percent
-# Output
+      
+## Libraries Used
 * Playwright
 * Requests
 * Selectolax
