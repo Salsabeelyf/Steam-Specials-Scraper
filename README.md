@@ -7,14 +7,14 @@
 * A python script that scrapes games info from [Steam website](https://store.steampowered.com/specials "Steam website"), then
 
 * Extracts each game info:
-    ** title
-    ** link to thumbnail
-    ** category tags
-    ** rating
-    ** number of reviews
-    ** original price
-    ** discounted price
-    ** discount percent
+    * title
+    * link to thumbnail
+    * category tags
+    * rating
+    * number of reviews
+    * original price
+    * discounted price
+    * discount percent
 # Output
 * Playwright
 * Requests
