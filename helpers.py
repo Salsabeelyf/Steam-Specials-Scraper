@@ -10,6 +10,7 @@ from classes import Game
 def get_games_as_list(url):
     html = extract_html(url)
     games_elements = find_games_elements(html)
+    print('Extracting games info .....')
     games = [extract_game_info(game) for game in games_elements]
     return games
 
@@ -22,12 +23,14 @@ def extract_html(url):
         page = browser.new_page()
         page.goto(url)
 
+        print(f'{c.url} Loading .....')
         page.wait_for_load_state('networkidle', timeout = c.TIMEOUT)
         page.wait_for_selector('div.sale_item_browser', timeout= c.TIMEOUT)
         
         # scroll till games divs are visible
         scroll_to_element(page, c.game_div_locator)
         
+        print(f'{c.url} Loaded Successfully')
         return page.inner_html('body')
 
 
@@ -93,4 +96,5 @@ def get_rating_info(game):
 # Export info into output csv file
 def export_to_csv(games):
     df = pd.DataFrame(games)
+    print(f'Exporting to {c.file_name} .....')
     df.to_csv(c.file_name, index=False)
