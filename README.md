@@ -6,7 +6,7 @@
 
 * A python script that scrapes games info from [Steam website](https://store.steampowered.com/specials "Steam website"), then
 
-* Extracts each game info:
+* Extracts each game info depending on attributes in `config.json`, for example:
     * title
     * link to thumbnail
     * category tags
@@ -33,7 +33,18 @@ pip install -r requirements.txt
 ```
 
 ## Running
-Run the following command:
+#### If you want to add more attributes for the code to exctract, edit `config.json` file, for example:
+
+```
+{
+   "name": "description",
+   "selector": "div.StoreSaleWidgetShortDesc",
+   "match": "first",
+   "type": "text"
+}
+```
+
+#### Run the following command:
 
 ```
 py main.py
