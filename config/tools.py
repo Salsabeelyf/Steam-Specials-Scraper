@@ -6,18 +6,23 @@ _config = {
     'timeout': 60000,
     'url': 'https://store.steampowered.com/specials',
     'csv_file': 'games_data.csv',
-    'container':
-        {
-            'name': 'games_parent_div',
-            'selector': 'div.sale_item_browser',
-            'match': 'all',
-            'type': 'node'
+    'meta': {
+        'name': 'Steam Specials Scraper',
+        'description': 'Scrapes Special games info from Steam website',
+        'author': 'Salsabeel Youssef',
+        'version': '0.1'
+    },
+    'container': {
+        'name': 'games_parent_div',
+        'selector': 'div.sale_item_browser',
+        'match': 'all',
+        'type': 'node'
         },
     'game_item': {
-            'name': 'game_div',
-            'selector': 'div.sale_item_browser div.ImpressionTrackedElement',
-            'match': 'all',
-            'type': 'node'
+        'name': 'game_div',
+        'selector': 'div.sale_item_browser div.ImpressionTrackedElement',
+        'match': 'all',
+        'type': 'node'
         },
     'attribute_item': [
         {
