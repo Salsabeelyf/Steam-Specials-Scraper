@@ -1,6 +1,6 @@
 import json
 
-config_file = 'config.json'
+config_file = 'config/config.json'
 
 _config = {
     'timeout': 60000,
