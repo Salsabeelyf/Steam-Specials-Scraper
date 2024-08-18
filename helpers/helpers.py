@@ -1,4 +1,3 @@
-from selectolax.parser import HTMLParser
 from selectolax.parser import Node
 from config.tools import get_config
 import helpers.network as n
@@ -23,19 +22,20 @@ def get_games_as_list():
     games_elements = find_games_elements(html)
     print('Extracting games info .....')
     games = [extract_game_info(game) for game in games_elements]
+
     return games
 
 
 # Find games divs nodes
 def find_games_elements(html):
-    tree = HTMLParser(html)
-    games = tree.css(config.get('game_item').get('selector'))
+    games_elements = p.get_raw_attributes(html, [config.get('game_item')]).get(config.get('game_item').get('name'))
     
-    return games# Export info into output csv file
+    return games_elements
 
 
 # Extract info from each game div element
 def extract_game_info(game: Node):
     raw_attrs = p.get_raw_attributes(game, config.get('attribute_item'))
     game_obj =  ex.process_attributes(raw_attrs)
+
     return game_obj
