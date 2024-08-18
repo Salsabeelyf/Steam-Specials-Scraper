@@ -1,0 +1,73 @@
+{
+    "timeout": 60000,
+    "url": "https://store.steampowered.com/specials",
+    "csv_file": "games_data.csv",
+    "container": {
+        "name": "games_parent_div",
+        "selector": "div.sale_item_browser",
+        "match": "all",
+        "type": "node"
+    },
+    "game_item": {
+        "name": "game_div",
+        "selector": "div.sale_item_browser div.ImpressionTrackedElement",
+        "match": "all",
+        "type": "node"
+    },
+    "attribute_item": [
+        {
+            "name": "title",
+            "selector": "div.StoreSaleWidgetTitle",
+            "match": "first",
+            "type": "text"
+        },
+        {
+            "name": "thumbnail",
+            "selector": "div.CapsuleImageCtn img",
+            "match": "first",
+            "type": "src"
+        },
+        {
+            "name": "description",
+            "selector": "div.StoreSaleWidgetShortDesc",
+            "match": "first",
+            "type": "text"
+        },
+        {
+            "name": "tags",
+            "selector": "a.WidgetTag",
+            "match": "all",
+            "type": "text"
+        },
+        {
+            "name": "rating",
+            "selector": "a.ReviewScore > div",
+            "match": "first",
+            "type": "text"
+        },
+        {
+            "name": "no_of_reviews",
+            "selector": "a.ReviewScore > div",
+            "match": "first",
+            "type": "text"
+        },
+        {
+            "name": "original_price",
+            "selector": "div.StoreSalePriceWidgetContainer",
+            "match": "first",
+            "type": "text"
+        },
+        {
+            "name": "discounted_price",
+            "selector": "div.StoreSalePriceWidgetContainer",
+            "match": "first",
+            "type": "text"
+        },
+        {
+            "name": "discount_percent",
+            "selector": "div.StoreSalePriceWidgetContainer",
+            "match": "first",
+            "type": "text"
+        }
+    ]
+}
