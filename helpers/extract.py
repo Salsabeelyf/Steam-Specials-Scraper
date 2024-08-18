@@ -1,6 +1,4 @@
-from classes import Game
 import re
-
 
 # Process raw attributes and get actual values needed, then create Game object
 def process_attributes(attrs):
